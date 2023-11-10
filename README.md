@@ -22,11 +22,11 @@ rosdep install -yi --from-paths aquestalkpi_ros
 ```bash
 colcon build
 source install/setup.bash
-ros2 run aquestalkpi_ros aquestalkpi_ros_node --ros-args -p aquestalkpi_path:=[AquesTalk Piへのパス]
+ros2 run aquestalkpi_ros aquestalkpi_ros --ros-args -p aquestalkpi_path:=[AquesTalk Piへのパス]
 ```
 
 以下のようなメッセージを publish するとしゃべります。
 
 ```bash
-ros2 topic pub /aquestalkpi_ros aquestalkpi_ros_msgs/msg/Talk "{text: こんにちは, voice: f1, speed: 100}"
+ros2 topic pub /aquestalkpi_ros/talk aquestalkpi_ros_msgs/msg/Talk '{text: こんにちは, voice: f1, speed: 100}'
 ```
