@@ -35,7 +35,7 @@ ament_target_dependencies(${PROJECT_NAME}_component
 )
 rclcpp_components_register_node(${PROJECT_NAME}_component
   PLUGIN "aquestalkpi_ros::AquesTalkPiRosComponent"
-  EXECUTABLE ${PROJECT_NAME}_node
+  EXECUTABLE ${PROJECT_NAME}
 )
 
 # インストール

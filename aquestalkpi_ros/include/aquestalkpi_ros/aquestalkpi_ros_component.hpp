@@ -21,7 +21,7 @@ public:
   AquesTalkPiRosComponent(
       const std::string &name_space = "",
       const rclcpp::NodeOptions &options = rclcpp::NodeOptions())
-      : Node("aquestalkpi_ros_node", name_space, options) {
+      : Node("aquestalkpi_ros", name_space, options) {
     // パラメータ取得
     declare_parameter("aquestalkpi_path", "./aquestalkpi/AquesTalkPi");
     auto aquestalkpi_path = get_parameter("aquestalkpi_path").as_string();
@@ -38,7 +38,7 @@ public:
     // サブスクライバ
     aquestalkpi_ros_sub_ =
         this->create_subscription<aquestalkpi_ros_msgs::msg::Talk>(
-            "aquestalkpi_ros", rclcpp::QoS(10),
+            "~/talk", rclcpp::QoS(10),
             std::bind(&AquesTalkPiRosComponent::aquestalkpi_ros_callback, this,
                       std::placeholders::_1));
   }
